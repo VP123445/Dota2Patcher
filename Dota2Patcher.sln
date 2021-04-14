@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dota2Patcher", "Dota2Patcher.csproj", "{F28B3F45-19AD-46EA-AE53-2C9A1641465C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F28B3F45-19AD-46EA-AE53-2C9A1641465C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28B3F45-19AD-46EA-AE53-2C9A1641465C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28B3F45-19AD-46EA-AE53-2C9A1641465C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28B3F45-19AD-46EA-AE53-2C9A1641465C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1521AC17-D0D7-427B-B5C3-99CAEE6A04BC}
+	EndGlobalSection
+EndGlobal
