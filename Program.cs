@@ -30,7 +30,7 @@ namespace Dota2Patcher
             "\""
           }, StringSplitOptions.None)[1].Split(new string[1] {
             "game\\bin\\win"
-          }, StringSplitOptions.None)[0] + "game\\bin\\win64\\engine2.dll");
+          }, StringSplitOptions.None)[0]);
                 }
             }
         }
