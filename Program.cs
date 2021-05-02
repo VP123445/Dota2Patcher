@@ -15,7 +15,7 @@ namespace Dota2Patcher
             Console.ReadLine();
         }
 
-        internal static DirectoryInfo path_to_engine2;
+        internal static DirectoryInfo path_to_dota;
 
         internal static void Determine_dota_path()
         {
@@ -26,7 +26,7 @@ namespace Dota2Patcher
                     object obj = registryKey2.GetValue("");
                     if (!(obj.GetType().Name == "String"))
                         return;
-                    path_to_engine2 = new DirectoryInfo(obj.ToString().Split(new string[1] {
+                    path_to_dota = new DirectoryInfo(obj.ToString().Split(new string[1] {
             "\""
           }, StringSplitOptions.None)[1].Split(new string[1] {
             "game\\bin\\win"
