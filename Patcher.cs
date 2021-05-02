@@ -85,7 +85,7 @@ namespace Dota2Patcher
         
         private static void Patch_Engine()
         {
-            string pathToDLL = Program.path_to_engine2.ToString() + "game\\bin\\win64\\engine2.dll";
+            string pathToDLL = Program.path_to_dota.ToString() + "game\\bin\\win64\\engine2.dll";
             byte[] DllBytes = File.ReadAllBytes(pathToDLL);
             
             foreach (byte[][] find in sigEngine)
@@ -99,7 +99,7 @@ namespace Dota2Patcher
 
         private static void Patch_Client()
         {
-            string pathToDLL = Program.path_to_engine2.ToString() + "game\\dota\\bin\\win64\\client.dll";
+            string pathToDLL = Program.path_to_dota.ToString() + "game\\dota\\bin\\win64\\client.dll";
             byte[] DllBytes = File.ReadAllBytes(pathToDLL);
 
             foreach (byte[][] find in sigClient)
