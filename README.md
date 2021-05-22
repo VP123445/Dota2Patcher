@@ -14,8 +14,13 @@
 * Just [Verify Integrity of Game Files](https://support.steampowered.com/kb/2037-QEUH-3335/verify-integrity-of-game-cache?l=english)
 * All patched files will be removed
 
-### Popular convars (cheat commands):
+## sv_cheats
+* only client side!
 
+### Popular convars (cheat commands):
+* `sv_cheats`: default `0` (after patching `1`)
+	* `1` - Unlock convars thats have `cheat` flag
+		* ex. `sv_cheats 1`
 * `dota_use_particle_fow`: default `1`
 	* `0` - Show hidden spells (particles) and teleports in map's fog
 		* ex. `dota_use_particle_fow 0`
@@ -44,6 +49,7 @@
 * just copy raw list and past to console after pathing
 
 ```
+sv_cheats 1;
 dota_use_particle_fow 0;
 fog_enable 0;
 fow_client_nofiltering 1;
