@@ -2,7 +2,6 @@
 ## Usage
 
 * Start `Dota2Patcher.exe`
-	* Enter manually path to DotA 2 (include 'dota 2 beta') if can't auto detect path
 * Wait while files of DotA2 will be patched (will be writted `Patched`)
 * Close `Dota2Patcher.exe`
 * Done ;)
