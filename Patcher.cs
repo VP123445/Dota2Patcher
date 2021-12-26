@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 // You need IDA and Function String Associate plugin
@@ -6,7 +6,7 @@ using System.IO;
 // View => Open subviews => Strings
 // Ctrl+F, search for "SV: Convar '%s' is cheat protected, change ignored."
 // Put cursor on "aSvConvarSIsChe", press X, open first xref, open function
-// Go to start of the function, scroll down and search for similar code
+// Go to beginning of the function, scroll down and search for similar code
 
 // .text:0000000180158617                               loc_180158617:                          ; CODE XREF: sub_180158160+4AE↑j
 // .text:0000000180158617 48 8B D6                                      mov     rdx, rsi
@@ -18,23 +18,23 @@ using System.IO;
 // .text:000000018015862C                               loc_18015862C:                          ; CODE XREF: sub_180158160+440↑j
 // .text:000000018015862C BA 00 40 00 00                                mov     edx, 4000h
 // .text:0000000180158631 41 FF D0                                      call    r8
-// .text:0000000180158634 84 C0                                         test    al, al <<---- HERE
-// .text:0000000180158636 74 6E                                         jz      short loc_1801586A6
+// .text:0000000180158634 84 C0                                         test    al, al
+// .text:0000000180158636 74 6E                                         jz      short loc_1801586A6 <<---- HERE
 
-// You need to change "test al, al" to "test al, 0" (84 C0 to A8 00)
+// You need to change "jz short loc_1801586A6" to "jmp short loc_1801586A6 (74 to EB)
 
 namespace Dota2Patcher {
     static class Patcher {
         private static readonly byte[][][] SigToPatch = {
             new byte[2][] {
-                new byte[] { 0x84, 0xC0, 0x74, 0xCC, 0xE8, 0xCC, 0xCC, 0xCC, 0xCC, 0x84, 0xC0, 0x75, 0xCC, 0xE8 },
-                new byte[] { 0xA8, 0x00 }
+                new byte[] { 0x74, 0xCC, 0xE8, 0xCC, 0xCC, 0xCC, 0xCC, 0x84, 0xC0, 0x75, 0xCC, 0xE8 },
+                new byte[] { 0xEB }
             }
         };
 
         private static readonly byte[][][] SigToValidatePatch = {
             new byte[1][] {
-                new byte[] { 0xA8, 0x00, 0x74, 0xCC, 0xE8, 0xCC, 0xCC, 0xCC, 0xCC, 0x84, 0xC0, 0x75, 0xCC, 0xE8 }
+                new byte[] { 0xEB, 0xCC, 0xE8, 0xCC, 0xCC, 0xCC, 0xCC, 0x84, 0xC0, 0x75, 0xCC, 0xE8 }
             }
         };
 
