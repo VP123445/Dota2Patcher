@@ -22,8 +22,6 @@ using System.IO;
 // .text:0000000180158636 74 6E                                         jz      short loc_1801586A6
 
 // You need to change "test al, al" to "test al, 0" (84 C0 to A8 00)
-// First "al" is probably sv_cheats ConVar value.
-// Second is "cheat status" of your command. I guess.
 
 namespace Dota2Patcher {
     static class Patcher {
