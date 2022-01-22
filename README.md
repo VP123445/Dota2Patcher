@@ -14,9 +14,12 @@ gameinfo.gi should look like this:
 
 
 # sv_cheats unlock
-Allows you to use any cheat-protected commands in multiplayer (ex: dota_camera_distance 1500)
+Allows you to use any cheat-protected commands in multiplayer (ex: `dota_camera_distance 1500`)
 
 ### Popular convars (cheat commands):
+* `sv_cheats`: default `0`
+	* `1` - Unlock convars thats have cheat flag (use it first!)
+		* ex. `sv_cheats 1`
 * `dota_use_particle_fow`: default `1`
 	* `0` - Show hidden spells (particles) and teleports in map's fog
 		* ex. `dota_use_particle_fow 0`
@@ -45,7 +48,7 @@ Allows you to use any cheat-protected commands in multiplayer (ex: dota_camera_d
 * just copy raw list and past to console
 
 ```
-dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000;
+sv_cheats1; dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000;
 ```
 
 # Removing from Dota 2
