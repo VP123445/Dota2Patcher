@@ -1,12 +1,20 @@
-# Dota2Patcher
+# NEW: [gameinfo.gi CRC file check](https://www.reddit.com/r/DotA2/comments/s46mj8/dota_2_update_for_11422_11522_utc) bypass
+Allows you to use vpk mods like well known [No-Bling](https://github.com/No-Bling/DOTA).  
+
+### How To:
+* Download [latest Dota2Patcher release](https://github.com/Wolf49406/Dota2Patcher/releases/latest);
+* Launch it, select `[1] Patch All` or `[3] Patch Gameinfo`;
+* Drop desired vpk to your mods folder inside `\dota 2 beta\game\` (ex: `\dota 2 beta\game\dota_tempcontent`);
+* Open `\dota 2 beta\game\dota\gameinfo.gi` with text editor;
+* Change line 39 to `Game dota_tempcontent`
+* And line 40 to `Mod dota_tempcontent`
+
+gameinfo.gi should look like this:  
+![image](https://user-images.githubusercontent.com/26302888/150647061-251ac247-18f8-407c-847b-3657947f43b2.png)
+
+
+# sv_cheats unlock
 Allows you to use any cheat-protected commands in multiplayer (ex: dota_camera_distance 1500)
-
-**NOTICE**: You need to patch after almost every update of the game client!
-
-### Removing from DotA 2
-
-* Just [Verify Integrity of Game Files](https://support.steampowered.com/kb/2037-QEUH-3335/verify-integrity-of-game-cache?l=english)
-* All patched files will be removed
 
 ### Popular convars (cheat commands):
 * `dota_use_particle_fow`: default `1`
@@ -37,5 +45,8 @@ Allows you to use any cheat-protected commands in multiplayer (ex: dota_camera_d
 * just copy raw list and past to console
 
 ```
-dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000; dota_range_display 1200; cl_weather 8;
+dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000;
 ```
+
+# Removing from Dota 2
+* From launcher menu select `[4] Revert Patches`
