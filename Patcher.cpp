@@ -68,20 +68,18 @@ void Patcher::apply_patch(std::string file_path, int patch_offset, BYTE replace[
 bool Patcher::patch_gameinfo(bool revert) {
     std::string client_path = Globals::dota_path + "dota\\bin\\win64\\client.dll";
 
-    BYTE* gameinfo_pattern = Globals::gameinfo_pattern;
-    BYTE* gameinfo_replace = Globals::gameinfo_replace;
     if (revert) {
-        gameinfo_pattern = Globals::gameinfo_revert_pattern;
-        gameinfo_replace = Globals::gameinfo_revert_replace;
+        Globals::gameinfo_pattern[0] = { 0xEB };
+        Globals::gameinfo_replace[0] = { 0x74 };
     }
 
-    int client_patch_offset = Patcher::find_offset(client_path, gameinfo_pattern, sizeof(Globals::gameinfo_pattern));
+    int client_patch_offset = Patcher::find_offset(client_path, Globals::gameinfo_pattern, sizeof(Globals::gameinfo_pattern));
     if (!client_patch_offset) {
         std::cout << "[-] Gameinfo Bypass Offset is NULL!" << std::endl;
         return false;
     }
 
-    Patcher::apply_patch(client_path, client_patch_offset, gameinfo_replace, sizeof(Globals::gameinfo_replace));
+    Patcher::apply_patch(client_path, client_patch_offset, Globals::gameinfo_replace, sizeof(Globals::gameinfo_replace));
 
     return true;
 }
@@ -90,20 +88,18 @@ bool Patcher::patch_gameinfo(bool revert) {
 bool Patcher::patch_sv_cheats(bool revert) {
     std::string engine_path = Globals::dota_path + "bin\\win64\\engine2.dll";
 
-    BYTE* sv_cheats_pattern = Globals::sv_cheats_pattern;
-    BYTE* sv_cheats_replace = Globals::sv_cheats_replace;
     if (revert) {
-        sv_cheats_pattern = Globals::sv_cheats_revert_pattern;
-        sv_cheats_replace = Globals::sv_cheats_revert_replace;
+        Globals::sv_cheats_pattern[0] = { 0xEB };
+        Globals::sv_cheats_replace[0] = { 0x74 };
     }
 
-    int engine_patch_offset = Patcher::find_offset(engine_path, sv_cheats_pattern, sizeof(Globals::sv_cheats_pattern));
+    int engine_patch_offset = Patcher::find_offset(engine_path, Globals::sv_cheats_pattern, sizeof(Globals::sv_cheats_pattern));
     if (!engine_patch_offset) {
         std::cout << "[-] Sv_cheats Bypass Offset is NULL!" << std::endl;
         return false;
     }
 
-    Patcher::apply_patch(engine_path, engine_patch_offset, sv_cheats_replace, sizeof(Globals::sv_cheats_replace));
+    Patcher::apply_patch(engine_path, engine_patch_offset, Globals::sv_cheats_replace, sizeof(Globals::sv_cheats_replace));
 
     return true;
 }
