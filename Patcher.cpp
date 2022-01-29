@@ -68,9 +68,10 @@ void Patcher::apply_patch(std::string file_path, int patch_offset, BYTE replace[
 bool Patcher::patch_gameinfo(bool revert) {
     std::string client_path = Globals::dota_path + "dota\\bin\\win64\\client.dll";
 
+    BYTE Replace[] = { 0xEB } ;
     if (revert) {
         Globals::gameinfo_pattern[0] = { 0xEB };
-        Globals::gameinfo_replace[0] = { 0x74 };
+        Replace[0] = 0x74;
     }
 
     int client_patch_offset = Patcher::find_offset(client_path, Globals::gameinfo_pattern, sizeof(Globals::gameinfo_pattern));
@@ -79,7 +80,7 @@ bool Patcher::patch_gameinfo(bool revert) {
         return false;
     }
 
-    Patcher::apply_patch(client_path, client_patch_offset, Globals::gameinfo_replace, sizeof(Globals::gameinfo_replace));
+    Patcher::apply_patch(client_path, client_patch_offset, Replace, sizeof(Replace));
 
     return true;
 }
@@ -88,9 +89,10 @@ bool Patcher::patch_gameinfo(bool revert) {
 bool Patcher::patch_sv_cheats(bool revert) {
     std::string engine_path = Globals::dota_path + "bin\\win64\\engine2.dll";
 
+    BYTE Replace[] = { 0xEB };
     if (revert) {
         Globals::sv_cheats_pattern[0] = { 0xEB };
-        Globals::sv_cheats_replace[0] = { 0x74 };
+        Replace[0] = 0x74;
     }
 
     int engine_patch_offset = Patcher::find_offset(engine_path, Globals::sv_cheats_pattern, sizeof(Globals::sv_cheats_pattern));
@@ -99,7 +101,7 @@ bool Patcher::patch_sv_cheats(bool revert) {
         return false;
     }
 
-    Patcher::apply_patch(engine_path, engine_patch_offset, Globals::sv_cheats_replace, sizeof(Globals::sv_cheats_replace));
+    Patcher::apply_patch(engine_path, engine_patch_offset, Replace, sizeof(Replace));
 
     return true;
 }
