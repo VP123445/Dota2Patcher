@@ -40,13 +40,18 @@ void DrawMenu() {
 }
 
 int main() {
-	Patcher::CheckUpdate();
-    //if (!Paths::get_dota_path(&Globals::dota_path)) {
-    //    system("pause");
-    //    return 0;
-    //}
+	if (Patcher::CheckUpdate()) {
+		std::cout << "Update required" << std::endl;
+		system("pause");
+		return 0;
+	}
 
-    //DrawMenu();
+    if (!Paths::get_dota_path(&Globals::dota_path)) {
+        system("pause");
+        return 0;
+    }
+
+    DrawMenu();
 
     system("pause");
     return 0;

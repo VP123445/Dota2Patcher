@@ -25,7 +25,10 @@ bool UpdateRequired() {
 	return false;
 }
 
-void Patcher::CheckUpdate() {
-	if (UpdateRequired())
-		ShellExecuteA(0, 0, "https://github.com/Wolf49406/Dota2Patcher/releases/latest", 0, 0, SW_SHOW);
+bool Patcher::CheckUpdate() {
+	if (!UpdateRequired())
+		return false;
+
+	ShellExecuteA(0, 0, "https://github.com/Wolf49406/Dota2Patcher/releases/latest", 0, 0, SW_SHOW);
+	return true;
 }
