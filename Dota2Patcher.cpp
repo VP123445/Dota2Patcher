@@ -40,12 +40,13 @@ void DrawMenu() {
 }
 
 int main() {
-    if (!Paths::get_dota_path(&Globals::dota_path)) {
-        system("pause");
-        return 0;
-    }
+	Patcher::CheckUpdate();
+    //if (!Paths::get_dota_path(&Globals::dota_path)) {
+    //    system("pause");
+    //    return 0;
+    //}
 
-    DrawMenu();
+    //DrawMenu();
 
     system("pause");
     return 0;

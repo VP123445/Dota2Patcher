@@ -8,6 +8,7 @@ namespace Paths {
 }
 
 namespace Patcher {
+	void CheckUpdate();
 	int find_offset(char* array, int array_length, BYTE* pattern, int pattern_length);
 	int find_offset(std::string file_path, BYTE* pattern, int pattern_size);
 	bool get_byte_array(std::string file_path, char** ret_array, int* file_size);
@@ -18,6 +19,7 @@ namespace Patcher {
 }
 
 namespace Globals {
+	inline std::string local_version = "v3.0.4.2";
 	inline std::string dota_path;
 
 	inline BYTE gameinfo_pattern[] = { 0x74, 0x00, 0x48, 0x8B, 0x00, 0x48, 0x3B, 0x00, 0x0F, 0x95, 0x00, 0xFF, 0x50, 0x00, 0x48, 0x89, 0x00, 0x00, 0x48, 0x8D };

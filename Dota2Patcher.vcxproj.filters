@@ -20,9 +20,15 @@
     <ClCompile Include="Patcher.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Updater.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dota2Patcher.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="version.txt">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
