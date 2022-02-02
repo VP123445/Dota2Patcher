@@ -48,7 +48,7 @@ Allows you to use any cheat-protected commands in multiplayer (ex: `dota_camera_
 * just copy raw list and past to console
 
 ```
-sv_cheats1; dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000;
+sv_cheats 1; dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000;
 ```
 
 # Removing from Dota 2
