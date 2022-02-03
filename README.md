@@ -1,19 +1,14 @@
-# NEW: [gameinfo.gi CRC file check](https://www.reddit.com/r/DotA2/comments/s46mj8/dota_2_update_for_11422_11522_utc) bypass
-Allows you to use vpk mods like well known [No-Bling](https://github.com/No-Bling/DOTA).  
-
 ### How To:
-* Download [latest Dota2Patcher release](https://github.com/Wolf49406/Dota2Patcher/releases/latest);
-* Launch it, select `[1] Patch All` or `[3] Patch Gameinfo`;
-* Drop desired vpk to your mods folder inside `\dota 2 beta\game\` (ex: `\dota 2 beta\game\dota_tempcontent`);
-* Open `\dota 2 beta\game\dota\gameinfo.gi` with text editor;
-* Change line 39 to `Game dota_tempcontent`
-* And line 40 to `Mod dota_tempcontent`
+* Download [latest release](https://github.com/Wolf49406/Dota2Patcher/releases/latest);
+* Launch Dota2Patcher, select `[1] Patch All` or desired function;
+* To remove, select `[5] Revert Patches`;
 
-gameinfo.gi should look like this:  
-![image](https://user-images.githubusercontent.com/26302888/150647061-251ac247-18f8-407c-847b-3657947f43b2.png)
+## NEW: FREE DOTA PLUS
+Now Patcher can unlock Dota Plus! Yes, completely free and forever.
 
+![image](https://user-images.githubusercontent.com/26302888/152439546-eb87ff23-3015-49cf-937a-623497f5bb8c.png)
 
-# sv_cheats unlock
+## sv_cheats unlock
 Allows you to use any cheat-protected commands in multiplayer (ex: `dota_camera_distance 1500`)
 
 ### Popular convars (cheat commands):
@@ -51,5 +46,15 @@ Allows you to use any cheat-protected commands in multiplayer (ex: `dota_camera_
 sv_cheats 1; dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000;
 ```
 
-# Removing from Dota 2
-* From launcher menu select `[4] Revert Patches`
+## [gameinfo.gi CRC file check](https://www.reddit.com/r/DotA2/comments/s46mj8/dota_2_update_for_11422_11522_utc) bypass
+Allows you to use vpk mods like well known [No-Bling](https://github.com/No-Bling/DOTA).  
+
+### How To:
+* Drop desired vpk to your mods folder inside `\dota 2 beta\game\` (ex: `\dota 2 beta\game\dota_tempcontent`);
+* Open `\dota 2 beta\game\dota\gameinfo.gi` with text editor;
+* Change line 39 to `Game dota_tempcontent`
+* And line 40 to `Mod dota_tempcontent`
+
+gameinfo.gi should look like this:  
+
+![image](https://user-images.githubusercontent.com/26302888/150647061-251ac247-18f8-407c-847b-3657947f43b2.png)

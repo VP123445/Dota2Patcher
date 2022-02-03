@@ -64,23 +64,23 @@ void Patcher::apply_patch(std::string file_path, int patch_offset, BYTE replace[
     fclose(pFile);
 }
 
-// client.dll - gameinfo.gi CRC check bypass
-bool Patcher::patch_gameinfo(bool revert) {
+// client.dll - Dota Plus unlock
+bool Patcher::patch_dota_plus(bool revert) {
     std::string client_path = Globals::dota_path + "dota\\bin\\win64\\client.dll";
 
-    BYTE Replace[] = { 0xEB } ;
+    BYTE Replace[] = { 0x70 };
     if (revert) {
-        Globals::gameinfo_pattern[0] = { 0xEB };
-        Replace[0] = 0x74;
+        Globals::dota_plus_pattern[7] = { 0x70 };
+        Replace[0] = 0x58;
     }
 
-    int client_patch_offset = Patcher::find_offset(client_path, Globals::gameinfo_pattern, sizeof(Globals::gameinfo_pattern));
-    if (!client_patch_offset) {
-        std::cout << "[-] Gameinfo Bypass Offset is NULL!" << std::endl;
+    int dota_plus_patch_offset = Patcher::find_offset(client_path, Globals::dota_plus_pattern, sizeof(Globals::dota_plus_pattern));
+    if (!dota_plus_patch_offset) {
+        std::cout << "[-] Dota Plus Unlock Offset is NULL!" << std::endl;
         return false;
     }
 
-    Patcher::apply_patch(client_path, client_patch_offset, Replace, sizeof(Replace));
+    Patcher::apply_patch(client_path, dota_plus_patch_offset + 7, Replace, sizeof(Replace));
 
     return true;
 }
@@ -102,6 +102,28 @@ bool Patcher::patch_sv_cheats(bool revert) {
     }
 
     Patcher::apply_patch(engine_path, engine_patch_offset, Replace, sizeof(Replace));
+
+    return true;
+}
+
+
+// client.dll - gameinfo.gi CRC check bypass
+bool Patcher::patch_gameinfo(bool revert) {
+    std::string client_path = Globals::dota_path + "dota\\bin\\win64\\client.dll";
+
+    BYTE Replace[] = { 0xEB } ;
+    if (revert) {
+        Globals::gameinfo_pattern[0] = { 0xEB };
+        Replace[0] = 0x74;
+    }
+
+    int client_patch_offset = Patcher::find_offset(client_path, Globals::gameinfo_pattern, sizeof(Globals::gameinfo_pattern));
+    if (!client_patch_offset) {
+        std::cout << "[-] Gameinfo Bypass Offset is NULL!" << std::endl;
+        return false;
+    }
+
+    Patcher::apply_patch(client_path, client_patch_offset, Replace, sizeof(Replace));
 
     return true;
 }
