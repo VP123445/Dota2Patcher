@@ -46,6 +46,9 @@ Allows you to use any cheat-protected commands in multiplayer (ex: `dota_camera_
 sv_cheats 1; dota_use_particle_fow 0; fog_enable 0; fow_client_nofiltering 1; dota_camera_distance 1500; r_farz 3000;
 ```
 
+Or download [coreinit.lua](https://github.com/Wolf49406/Dota2Patcher/blob/master/coreinit.lua), edit dota_camera_distance if needed, and put it in `dota 2 beta\game\dota\scripts\vscripts\core` folder.
+
+
 ## [gameinfo.gi CRC file check](https://www.reddit.com/r/DotA2/comments/s46mj8/dota_2_update_for_11422_11522_utc) bypass
 Allows you to use vpk mods like well known [No-Bling](https://github.com/No-Bling/DOTA).  
 
